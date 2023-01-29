@@ -1,0 +1,13 @@
+---
+title: "New Post"
+author: "Raul"
+date: "2023-01-29"
+categories: [news, code, analysis]
+image: "image.jpg"
+---
+
+This is a post with executable code.
+
+```{r}
+1 + 1
+```
