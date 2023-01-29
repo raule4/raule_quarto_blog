@@ -1,5 +1,6 @@
 project:
   type: website
+  output-dir: docs #added so github automatically makes site
 
 website:
   title: "raule_quarto_blog"
