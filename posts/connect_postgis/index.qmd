@@ -2,8 +2,9 @@
 title: "Query local PostGIS"
 author: "Raul"
 date: "2023-02-13"
-categories: [news, code, analysis]
+categories: [postgis]
 image: "image.jpg"
+draft: true
 ---
 
 This is a post with executable code.
@@ -22,7 +23,6 @@ library(RPostgres)
 library(sf)
 # census_api_key(key, overwrite = FALSE, install = FALSE)
 ```
-
 
 # Searching for Variables
 

@@ -2,7 +2,7 @@
 title: "My Quarto Sandbox"
 author: "Raul E."
 date: "2023-04-09"
-categories: [news, code, analysis]
+categories: [sandbox, new, custom]
 image: "image.jpg"
 ---
 
@@ -43,7 +43,7 @@ library(sf)
 
 # Searching for Variables
 
-```{r include=FALSE}
+```{r results='hide'}
 sf::st_drivers()
 # GDAL drivers
 st_drivers() %>% 
