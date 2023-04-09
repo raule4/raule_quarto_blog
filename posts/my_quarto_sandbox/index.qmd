@@ -1,0 +1,51 @@
+---
+title: "My Quarto Sandbox"
+author: "Raul E."
+date: "2023-04-09"
+categories: [news, code, analysis]
+image: "image.jpg"
+---
+
+Welcome to my sandbox where I can play with Quarto features.
+
+# Callouts
+
+::: callout-note
+Note that there are five types of callouts, including: `note`, `tip`, `warning`, `caution`, and `important`.
+:::
+
+::: callout-tip
+## Tip With Caption
+
+This is an example of a callout with a caption.
+:::
+
+```{r}
+#| label: load packages
+# install.packages("tidycensus") 
+library(tidycensus)
+library(tidyverse)
+library(ggplot2)
+library(DBI)
+library(RPostgres)
+library(sf)
+```
+
+# Table
+
+| Col1 | Price | Col3     |
+|------|------:|----------|
+| app  |     1 | pinklady |
+| ban  |     2 | florida  |
+| cant |     3 | pecos    |
+
+: Table
+
+# Searching for Variables
+
+```{r include=FALSE}
+sf::st_drivers()
+# GDAL drivers
+st_drivers() %>% 
+  filter(grepl("Post", name))
+```

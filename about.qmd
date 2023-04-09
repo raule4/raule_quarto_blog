@@ -15,4 +15,4 @@ about:
       href: https://github.com
 ---
 
-About this blog
+Raul Estrada is a Real Time Energy Trader. He earned his Masters in Human Factors in Information Design at Bentley University; and Masters in Economics with Data Analytics and Bachelors in Electrical Engineering at University of Texas - El Paso.
