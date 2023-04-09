@@ -1,0 +1,53 @@
+---
+title: "Census API"
+author: "Raul"
+date: "2023-01-29"
+categories: [news, code, analysis]
+image: "image.jpg"
+---
+
+This is a post with executable code.
+
+[Census API Key Signup](https://api.census.gov/data/key_signup.html)
+[tidy census documentation](https://cran.r-project.org/web/packages/tidycensus/tidycensus.pdf)
+
+```{r}  
+#| label: load packages
+# install.packages("tidycensus") 
+library(tidycensus)
+library(tidyverse)
+library(ggplot2)
+# census_api_key(key, overwrite = FALSE, install = FALSE)
+```
+To install your API key for use in future sessions, run this function with `install = TRUE`.
+Your API key has been stored in your .Renviron and can be accessed by Sys.getenv("CENSUS_API_KEY")
+
+# Searching for Variables
+```{r}
+v17 <- load_variables(2017, "acs5", cache = TRUE)
+View(v17)
+```
+
+```{r}
+
+# First time, reload your environment so you can use the key without restarting
+readRenviron("~/.Renviron")
+# You can check it with:
+Sys.getenv("CENSUS_API_KEY")
+```
+
+
+```{r}
+tx <- get_acs(geography = "block group",
+              variables = c(medincome = "B19013_001"),
+              state = "TX",
+              county = "El Paso",
+              geometry = TRUE,
+              keep_geo_vars = TRUE,
+              year = 2018)
+tx
+```
+```{r}
+plot(tx["estimate"])
+```
+

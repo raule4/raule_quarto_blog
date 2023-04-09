@@ -1,0 +1,34 @@
+---
+title: "Query local PostGIS"
+author: "Raul"
+date: "2023-02-13"
+categories: [news, code, analysis]
+image: "image.jpg"
+---
+
+This is a post with executable code.
+
+[Census API Key Signup](https://api.census.gov/data/key_signup.html) [tidy census documentation](https://cran.r-project.org/web/packages/tidycensus/tidycensus.pdf)
+
+```{r}
+#| label: load packages
+# install.packages("tidycensus") 
+library(tidycensus)
+library(tidyverse)
+library(ggplot2)
+library(DBI)
+library(RPostgres)
+#library(sqlpetr)
+library(sf)
+# census_api_key(key, overwrite = FALSE, install = FALSE)
+```
+
+
+# Searching for Variables
+
+```{r}
+sf::st_drivers()
+# GDAL drivers
+st_drivers() %>% 
+  filter(grepl("Post", name))
+```
